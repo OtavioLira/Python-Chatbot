@@ -2,7 +2,7 @@ import requests
 import json
 
 # URL do webhook local ou do servidor onde ele está rodando
-WEBHOOK_URL = "https://python-chatbot-2yeq.onrender.com/dialogflow"
+WEBHOOK_URL = "https://python-chatbot-wrup.onrender.com//dialogflow"
 
 # Função para simular uma requisição POST ao webhook com callback_data
 def test_webhook(action, callback_data=None):

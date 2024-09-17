@@ -26,12 +26,18 @@ def dialogflow():
     action = data['queryResult'].get('action', 'Unknown Action')
     parameters = data['queryResult'].get('parameters', {})
     
-    # Extrair callback_data corretamente da requisição do Telegram
-    callback_data = data['originalDetectIntentRequest']['payload']['data']['callback_query'].get('data')
+    # Verificar se a estrutura do payload contém 'data' e 'callback_query'
+    payload = data.get('originalDetectIntentRequest', {}).get('payload', {})
+    callback_query = payload.get('data', {}).get('callback_query', {})
+    callback_data = callback_query.get('data')
+
+    if callback_data:
+        logger.info(f"callback_data: {callback_data}")
+    else:
+        logger.info("callback_data não encontrado")
 
     # Usando logs ao invés de print
     logger.info(f"action: {action}")
-    logger.info(f"callback_data: {callback_data}")
 
     # Tratar diferentes ações baseadas na intent detectada
     if action == 'defaultWelcomeIntent':
