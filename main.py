@@ -2,6 +2,8 @@ import os
 import logging
 from typing import List
 from flask import Flask, request, jsonify
+import requests
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -43,7 +45,8 @@ def dialogflow():
     elif action == 'teste.action':
         # Tratar o callback_data com mais cuidado, para lidar com None
         if callback_data == 'opcao_1':
-            response = format_response(['opção 1 selecionada'])
+            dados = get_current_day_data()
+            response = format_response([dados['temperature_mean']])
         elif callback_data == 'opcao_2':
             response = format_response(['opção 2 selecionada'])
         else:
@@ -57,6 +60,53 @@ def dialogflow():
         response = format_response([f'No handler for the action name {action}.'])
 
     return response
+
+def get_current_day_data():
+    # URL da API (com a sua chave de API e coordenadas)
+    url = "https://my.meteoblue.com/packages/basic-day_airquality-day"
+    
+    # Parâmetros da requisição
+    params = {
+        'apikey': 'rtL1cHyhAjMZ53Jg',
+        'lat': -23.5475,
+        'lon': -46.6361,
+        'asl': 769,
+        'format': 'json'
+    }
+    
+    # Fazendo a requisição
+    response = requests.get(url, params=params)
+    
+    # Verificando se a requisição foi bem-sucedida
+    if response.status_code == 200:
+        data = response.json()
+
+        # Obtendo a data atual no formato esperado
+        today = datetime.now().strftime('%Y-%m-%d')
+        
+        # Localizando o índice da data atual nos dados retornados
+        try:
+            index = data['data_day']['time'].index(today)
+        except ValueError:
+            return f"Nenhum dado encontrado para a data de hoje ({today})"
+        
+        # Extraindo dados do dia atual
+        today_data = {
+            'temperature_mean': data['data_day']['temperature_mean'][index],
+            'humidity_mean': data['data_day']['relativehumidity_mean'][index],
+            'precipitation_probability': data['data_day']['precipitation_probability'][index],
+            'wind_speed': data['data_day']['windspeed_mean'][index],
+            'air_quality_index': data['data_day']['airqualityindex_mean'][index],
+            'uv_index': data['data_day']['uvindex'][index]
+        }
+        
+        return today_data
+    else:
+        return f"Erro na requisição: {response.status_code}"
+
+# Chamando a função e imprimindo os dados do dia atual
+data = get_current_day_data()
+print(data)
 
 if __name__ == '__main__':
     # Pegar a porta da variável de ambiente ou usar 5000 como padrão
