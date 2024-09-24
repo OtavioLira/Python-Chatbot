@@ -95,7 +95,7 @@ def get_nasa_image():
         return f"Erro na requisição: {response.status_code}"
 
 # Chamando a função e imprimindo os dados do dia atual
-data = get_current_day_data()
+data = get_nasa_image()
 print(data)
 
 if __name__ == '__main__':
