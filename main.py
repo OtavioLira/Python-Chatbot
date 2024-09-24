@@ -5,6 +5,10 @@ from flask import Flask, request, jsonify
 import requests
 from datetime import datetime
 
+import requests
+from urllib.request import urlretrieve
+from pprint import PrettyPrinter
+
 app = Flask(__name__)
 
 # Configuração básica de logging
@@ -43,16 +47,16 @@ def dialogflow():
 
     # Tratar diferentes ações baseadas na intent detectada
     if action == 'defaultWelcomeIntent':
-        response = format_response(['Hi, how can I help you today?'])
+        response = format_response(['Olá, como posso ajuda-lo?'])
 
-    elif action == 'input.welcome':
+    elif action == 'teste':
         response = format_response(['testando resposta', 'apareceu aii?'])
 
-    elif action == 'teste.action':
+    elif action == 'input.nasa':
         # Tratar o callback_data com mais cuidado, para lidar com None
         if callback_data == 'opcao_1':
-            dados = get_current_day_data()
-            response = format_response([dados['temperature_mean']])
+            dados = get_nasa_image()
+            response = format_response(['opção 1 selecionada'])
         elif callback_data == 'opcao_2':
             response = format_response(['opção 2 selecionada'])
         else:
@@ -67,16 +71,15 @@ def dialogflow():
 
     return response
 
-def get_current_day_data():
-    # URL da API (com a sua chave de API e coordenadas)
-    url = "https://my.meteoblue.com/packages/basic-day_airquality-day"
+def get_nasa_image():
+    # URL da API (com a sua chave de API)
+    url = "https://api.nasa.gov/planetary/apod"
     
     # Parâmetros da requisição
     params = {
-        'apikey': 'rtL1cHyhAjMZ53Jg',
-        'lat': -23.5475,
-        'lon': -46.6361,
-        'asl': 769,
+        'apikey': 'ktqGxRoe1TodCvszzxfVAT6v2sbQwJk3HESc5dAf',
+        'date': "2024-09-24",
+        'hd': 'True'
         'format': 'json'
     }
     
@@ -87,26 +90,7 @@ def get_current_day_data():
     if response.status_code == 200:
         data = response.json()
 
-        # Obtendo a data atual no formato esperado
-        today = datetime.now().strftime('%Y-%m-%d')
-        
-        # Localizando o índice da data atual nos dados retornados
-        try:
-            index = data['data_day']['time'].index(today)
-        except ValueError:
-            return f"Nenhum dado encontrado para a data de hoje ({today})"
-        
-        # Extraindo dados do dia atual
-        today_data = {
-            'temperature_mean': data['data_day']['temperature_mean'][index],
-            'humidity_mean': data['data_day']['relativehumidity_mean'][index],
-            'precipitation_probability': data['data_day']['precipitation_probability'][index],
-            'wind_speed': data['data_day']['windspeed_mean'][index],
-            'air_quality_index': data['data_day']['airqualityindex_mean'][index],
-            'uv_index': data['data_day']['uvindex'][index]
-        }
-        
-        return today_data
+        return data
     else:
         return f"Erro na requisição: {response.status_code}"
 
