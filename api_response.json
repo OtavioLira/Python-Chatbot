@@ -1,0 +1,632 @@
+{
+    "metadata": {
+      "modelrun_updatetime_utc": "2024-09-23 17:05",
+      "name": "",
+      "height": 769,
+      "timezone_abbrevation": "GMT-03",
+      "latitude": -23.5475,
+      "modelrun_utc": "2024-09-23 17:05",
+      "longitude": -46.6361,
+      "utc_timeoffset": -3.0,
+      "generation_time_ms": 13.563991
+    },
+    "units": {
+      "relativehumidity": "percent",
+      "aod550": "",
+      "no2": "μg/m³",
+      "pm10": "μg/m³",
+      "airqualityindex": "index",
+      "temperature": "C",
+      "windspeed": "ms-1",
+      "pm25": "μg/m³",
+      "predictability": "percent",
+      "precipitation_probability": "percent",
+      "dust_concentration": "μg/m³",
+      "pollen_grass": "grains/m³",
+      "ozone": "μg/m³",
+      "precipitation": "mm",
+      "co": "μg/m³",
+      "time": "YYYY-MM-DD hh:mm",
+      "pollen_birch": "grains/m³",
+      "pressure": "hPa",
+      "so2": "μg/m³",
+      "pollen_olive": "grains/m³",
+      "winddirection": "degree"
+    },
+    "data_day": {
+      "time": [
+        "2024-09-23",
+        "2024-09-24",
+        "2024-09-25",
+        "2024-09-26",
+        "2024-09-27",
+        "2024-09-28",
+        "2024-09-29"
+      ],
+      "sealevelpressure_mean": [
+        1014,
+        1014,
+        1012,
+        1010,
+        1013,
+        1018,
+        1018
+      ],
+      "dust_concentration_max": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        null,
+        null,
+        null
+      ],
+      "co_min": [
+        474.0,
+        412.0,
+        280.0,
+        247.0,
+        null,
+        null,
+        null
+      ],
+      "airqualityindex_min": [
+        49,
+        57,
+        40,
+        50,
+        null,
+        null,
+        null
+      ],
+      "temperature_instant": [
+        19.91,
+        20.29,
+        21.35,
+        24.26,
+        25.25,
+        18.6,
+        16.39
+      ],
+      "dust_concentration_min": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        null,
+        null,
+        null
+      ],
+      "sandstorm_alert": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "convective_precipitation": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0
+      ],
+      "temperature_mean": [
+        23.97,
+        23.9,
+        26.28,
+        27.96,
+        24.01,
+        18.02,
+        18.32
+      ],
+      "predictability": [
+        92,
+        89,
+        90,
+        80,
+        51,
+        53,
+        74
+      ],
+      "uvindex": [
+        9,
+        9,
+        10,
+        11,
+        7,
+        5,
+        8
+      ],
+      "so2_mean": [
+        13.58,
+        14.46,
+        11.17,
+        12.71,
+        null,
+        null,
+        null
+      ],
+      "pm25_max": [
+        62.0,
+        86.0,
+        68.0,
+        64.0,
+        null,
+        null,
+        null
+      ],
+      "pollen_birch_mean": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "precipitation_probability": [
+        0,
+        0,
+        0,
+        0,
+        42,
+        26,
+        5
+      ],
+      "pollen_grass_min": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "pollen_olive_max": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "winddirection": [
+        135,
+        90,
+        45,
+        0,
+        180,
+        135,
+        135
+      ],
+      "sealevelpressure_min": [
+        1011,
+        1011,
+        1008,
+        1007,
+        1009,
+        1016,
+        1015
+      ],
+      "pm25_min": [
+        29.0,
+        30.0,
+        17.0,
+        14.0,
+        null,
+        null,
+        null
+      ],
+      "windspeed_min": [
+        0.94,
+        1.21,
+        1.54,
+        1.92,
+        2.12,
+        3.37,
+        3.01
+      ],
+      "pollen_birch_max": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "felttemperature_mean": [
+        24.37,
+        24.43,
+        26.07,
+        26.81,
+        22.82,
+        16.54,
+        17.45
+      ],
+      "windspeed_mean": [
+        1.99,
+        2.02,
+        2.37,
+        2.57,
+        3.5,
+        4.09,
+        3.53
+      ],
+      "windspeed_max": [
+        4.06,
+        3.84,
+        3.07,
+        3.96,
+        5.29,
+        5.12,
+        4.55
+      ],
+      "relativehumidity_min": [
+        27,
+        34,
+        20,
+        18,
+        31,
+        68,
+        59
+      ],
+      "pictocode": [
+        1,
+        2,
+        2,
+        2,
+        3,
+        8,
+        3
+      ],
+      "pollen_grass_mean": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "so2_max": [
+        17.0,
+        18.0,
+        23.0,
+        22.0,
+        null,
+        null,
+        null
+      ],
+      "dust_concentration_mean": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        null,
+        null,
+        null
+      ],
+      "relativehumidity_mean": [
+        59,
+        57,
+        48,
+        37,
+        52,
+        78,
+        79
+      ],
+      "airqualityindex_max": [
+        101,
+        101,
+        80,
+        78,
+        null,
+        null,
+        null
+      ],
+      "co_max": [
+        919.0,
+        1090.0,
+        1147.0,
+        1101.0,
+        null,
+        null,
+        null
+      ],
+      "precipitation_hours": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0
+      ],
+      "predictability_class": [
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        3.0,
+        3.0,
+        4.0
+      ],
+      "airqualityindex_mean": [
+        77,
+        79,
+        60,
+        62,
+        null,
+        null,
+        null
+      ],
+      "snowfraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sealevelpressure_max": [
+        1016,
+        1016,
+        1014,
+        1012,
+        1018,
+        1020,
+        1020
+      ],
+      "humiditygreater90_hours": [
+        0.08,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.13,
+        0.0
+      ],
+      "aod550_mean": [
+        0.49,
+        0.54,
+        0.38,
+        0.31,
+        null,
+        null,
+        null
+      ],
+      "felttemperature_max": [
+        32.55,
+        30.27,
+        32.61,
+        33.39,
+        30.3,
+        18.4,
+        22.14
+      ],
+      "so2_min": [
+        10.0,
+        9.0,
+        4.0,
+        4.0,
+        null,
+        null,
+        null
+      ],
+      "no2_max": [
+        42.0,
+        36.0,
+        84.0,
+        93.0,
+        null,
+        null,
+        null
+      ],
+      "pollen_grass_max": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "no2_min": [
+        6.0,
+        6.0,
+        4.0,
+        4.0,
+        null,
+        null,
+        null
+      ],
+      "pm25_mean": [
+        43.13,
+        48.5,
+        35.96,
+        36.04,
+        null,
+        null,
+        null
+      ],
+      "rainspot": [
+        "0000000000000000000000000000000000000000000000000",
+        "0000000000000000000000000000000000000000000000000",
+        "0000000000000000000000000000000000000000000000000",
+        "0000000000000000000000000000000000000000000000000",
+        "1101222000000022000002200000000021100001110001112",
+        "3333333322333331233332222222201201021110000101111",
+        "2332232212212200022110000009000009000000000000000"
+      ],
+      "felttemperature_min": [
+        16.85,
+        20.24,
+        19.26,
+        20.02,
+        17.71,
+        14.83,
+        15.21
+      ],
+      "precipitation": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.8,
+        0.0
+      ],
+      "no2_mean": [
+        26.18,
+        22.83,
+        32.46,
+        40.0,
+        null,
+        null,
+        null
+      ],
+      "ozone_max": [
+        286.0,
+        261.0,
+        142.0,
+        143.0,
+        null,
+        null,
+        null
+      ],
+      "temperature_min": [
+        16.0,
+        19.53,
+        18.75,
+        20.94,
+        18.6,
+        16.39,
+        15.72
+      ],
+      "relativehumidity_max": [
+        95,
+        75,
+        82,
+        57,
+        78,
+        89,
+        95
+      ],
+      "pm10_mean": [
+        61.71,
+        70.04,
+        52.13,
+        52.04,
+        null,
+        null,
+        null
+      ],
+      "aod550_max": [
+        0.66,
+        0.78,
+        0.45,
+        0.4,
+        null,
+        null,
+        null
+      ],
+      "co_mean": [
+        646.04,
+        629.58,
+        591.04,
+        630.83,
+        null,
+        null,
+        null
+      ],
+      "pollen_olive_min": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "pm10_min": [
+        42.0,
+        43.0,
+        24.0,
+        20.0,
+        null,
+        null,
+        null
+      ],
+      "temperature_max": [
+        32.4,
+        28.77,
+        33.41,
+        34.56,
+        30.76,
+        20.0,
+        22.83
+      ],
+      "pm10_max": [
+        88.0,
+        124.0,
+        98.0,
+        92.33,
+        null,
+        null,
+        null
+      ],
+      "ozone_mean": [
+        152.42,
+        160.71,
+        93.75,
+        85.0,
+        null,
+        null,
+        null
+      ],
+      "aod550_min": [
+        0.32,
+        0.34,
+        0.31,
+        0.26,
+        null,
+        null,
+        null
+      ],
+      "pollen_birch_min": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "pollen_olive_mean": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "ozone_min": [
+        33.0,
+        65.0,
+        36.0,
+        24.0,
+        null,
+        null,
+        null
+      ]
+    }
+  }
