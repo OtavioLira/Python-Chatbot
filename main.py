@@ -49,7 +49,7 @@ def dialogflow():
     if action == 'defaultWelcomeIntent':
         response = format_response(['Olá, como posso ajuda-lo?'])
 
-    elif action == 'teste':
+    elif action == 'input.welcome':
         response = format_response(['testando resposta', 'apareceu aii?'])
 
     elif action == 'input.nasa':
