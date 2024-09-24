@@ -79,7 +79,7 @@ def get_nasa_image():
     params = {
         'apikey': 'ktqGxRoe1TodCvszzxfVAT6v2sbQwJk3HESc5dAf',
         'date': "2024-09-24",
-        'hd': 'True'
+        'hd': 'True',
         'format': 'json'
     }
     
